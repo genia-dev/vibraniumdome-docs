@@ -23,7 +23,7 @@
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://vibraniumdome.mintlify.app"
   },
   "tabs": [
    
@@ -32,12 +32,12 @@
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "vibraniumdome.mintlify.app"
+      "url": "https://vibraniumdome.mintlify.app"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "vibraniumdome.mintlify.app"
+      "url": "https://vibraniumdome.mintlify.app"
     }
   ],
   "navigation": [
