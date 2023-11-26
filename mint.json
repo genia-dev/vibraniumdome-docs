@@ -2,17 +2,17 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Starter Kit",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "https://ai-tool.nextjstemplates.com/_next/static/media/logo.9f5a9c3a.svg",
+    "light": "https://ai-tool.nextjstemplates.com/_next/static/media/logo.9f5a9c3a.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#ba9cff",
+    "light": "#ba9cff",
+    "dark": "#ba9cff",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#ba9cff",
+      "to": "#ba9cff"
     }
   },
   "topbarLinks": [
@@ -26,26 +26,18 @@
     "url": "https://dashboard.mintlify.com"
   },
   "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
+   
   ],
   "anchors": [
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "url": "vibraniumdome.mintlify.app"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "vibraniumdome.mintlify.app"
     }
   ],
   "navigation": [
@@ -56,18 +48,6 @@
     {
       "group": "Essentials",
       "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/introduction"]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
     }
   ],
   "footerSocials": {
