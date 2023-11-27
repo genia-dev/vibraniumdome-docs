@@ -47,18 +47,16 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
-    },
-    {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
+      "pages": ["introduction", "quickstart"]
     },
     {
       "group": "Shields",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
+      "pages": ["shields/input", "shields/output"]
     }
   ],
   "footerSocials": {
+    "twitter": "https://twitter.com",
+    "linkedin": "https://linkedin.com",
     "github": "https://github.com/genia-dev/VibraniumDome"
   }
 }
