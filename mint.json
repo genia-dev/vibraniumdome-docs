@@ -4,7 +4,7 @@
   "logo": {
     "dark": "./logo/dark.svg",
     "light": "./logo/light.svg",
-    "href": "https://vibraniumdome.com"
+    "href": "https://docs.vibraniumdome.com"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -27,7 +27,7 @@
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://vibraniumdome.mintlify.app"
+    "url": "https://docs.vibraniumdome.com"
   },
   "tabs": [
    
@@ -36,12 +36,12 @@
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "https://vibraniumdome.mintlify.app"
+      "url": "https://docs.vibraniumdome.com"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://vibraniumdome.mintlify.app"
+      "url": "https://docs.vibraniumdome.com"
     }
   ],
   "navigation": [
