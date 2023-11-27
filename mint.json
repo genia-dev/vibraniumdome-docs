@@ -1,15 +1,19 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Vibranium Dome",
   "logo": {
     "dark": "./logo/dark.svg",
-    "light": "./logo/light.svg"
+    "light": "./logo/light.svg",
+    "href": "https://vibraniumdome.com"
   },
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#ba9cff",
     "light": "#ba9cff",
-    "dark": "#ba9cff",
+    "dark": "#8646F4",
+    "background":{
+      "dark": "#030014"
+    },
     "anchors": {
       "from": "#ba9cff",
       "to": "#ba9cff"
@@ -47,6 +51,10 @@
     },
     {
       "group": "Essentials",
+      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
+    },
+    {
+      "group": "Shields",
       "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
     }
   ],
