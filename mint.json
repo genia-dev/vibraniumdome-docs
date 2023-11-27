@@ -51,7 +51,7 @@
     },
     {
       "group": "Shields",
-      "pages": ["shields/input", "shields/output"]
+      "pages": ["shields/input-shields", "shields/output-shields"]
     }
   ],
   "footerSocials": {
