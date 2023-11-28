@@ -1,0 +1,18 @@
+---
+title: Vibranium Dome Policy
+description: 'Vibranium policy are the bluepring upon which the LLM interaction shields operate'
+---
+
+Vibranium Dome policies are managed through Vibranium Dome application web interface. their granularity level is applicaiton.
+The default policy is used by new applications, for which no speficic overriding policy is defined.
+<br />
+The Policy has the following configuration:
+- shield name: a name that will refer to this policy in the system for example in logs or alerts.
+- The main 'knob' that control all the policy shields is the shields filter that can have the following values: 
+    - "all" - means the policy is active and all shields should be executed according to their configuration
+    - "dry_run" - means the policy instruct the shields to run but avoid any risk impact. this is a good practice for new Agents which are under staging and do not have a real user impact, or when the security team wants to observe a new policy configuration that might be noisy due to too many false positives.
+    - "skip" - means the policy should be skipped altogether. this is a good practice for LLM Agents the security team wants to avoid any security oversight, for example during development or no user impact
+- high_risk_threshold - the risk threshold above which a shield execution calculated risk is considered as 'High', default is 0.8.
+- low_risk_threshold: - the risk threshold below which a shield execution calculated risk is considered as 'None', default is 0.2. the risk is considered 'low' otherwise
+- list of input shields
+- list of output shields

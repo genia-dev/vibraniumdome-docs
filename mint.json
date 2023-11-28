@@ -67,6 +67,13 @@
       ]
     },
     {
+      "group": "Application",
+      "pages": [
+        "/application/dashboard",
+        "/application/policies"
+      ]
+    },
+    {
       "group": "Shields",
       "pages": [
         "shields/introduction",
