@@ -1,6 +1,49 @@
 ---
 title: Shields Introduction
-description: 'Vibranium shields are Vibranium Dome core components'
+description: "Vibranium shields are Vibranium Dome core components"
 ---
 
+The shields are designed to offer controls over [The LLM Agents top vulnerabilities by OWASP](https://llmtop10.com/)
+
+<CardGroup cols={2}>
+  <Card title="Prompt Injections LLM01" icon="square-1">
+    <br />
+    Crafty inputs can manipulate a Large Language Model, causing unintended actions.
+    Direct injections overwrite system prompts, while indirect ones manipulate inputs
+    from external sources.
+  </Card>
+  <Card title="LLM02: Insecure Output Handling" icon="square-2">
+    <br />
+    This vulnerability occurs when an LLM output is accepted without scrutiny, exposing
+    backend systems. Misuse may lead to severe consequences like XSS, CSRF, SSRF,
+    privilege escalation, or remote code execution.
+  </Card>
+  <Card title="LLM04: Model Denial of Service" icon="square-4">
+    <br />
+    Attackers cause resource-heavy operations on Large Language Models leading to
+    service degradation or high costs. The vulnerability is magnified due to the
+    resource-intensive nature of LLMs and unpredictability of user inputs.
+  </Card>
+  <Card title="LLM06: Sensitive Information Disclosure" icon="square-6">
+    <br />
+    LLM's may reveal confidential data in its responses, leading to unauthorized
+    data access, privacy violations, and security breaches. It’s crucial to implement
+    data sanitization and strict user policies to mitigate this.{" "}
+  </Card>
+  <Card title="LLM07: Insecure Plugin Design" icon="square-7">
+    <br />
+    LLM plugins can have insecure inputs and insufficient access control. This lack
+    of application control makes them easier to exploit and can result in consequences
+    like remote code execution.{" "}
+  </Card>
+  <Card title="LLM08: Excessive Agency" icon="square-8">
+    <br />
+    LLM-based systems may undertake actions leading to unintended consequences. The
+    issue arises from excessive functionality, permissions, or autonomy granted to
+    the LLM-based systems.
+  </Card>
+</CardGroup>
+
 The Vibranium Shields are designed to take their configuration from the security policy which are managed by the security team using the Vibranium app backoffice.
+Shields are plug and play and new ones can be easily implemented by the community.
+they hold security best practices, integration with SOTA prompt injection models and engineering best practices

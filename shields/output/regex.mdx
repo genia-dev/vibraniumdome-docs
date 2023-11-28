@@ -1,4 +1,10 @@
 ---
 title: Regex
-description: 'Vibranium Dome Input Shields'
+description: 'Vibranium Dome Output Shield'
 ---
+
+This shield finds all completion matches of a policy defined list of regular expresion, it is intended to detect sensetive data being returned by the LLM.
+this vulnerability can also be triggered in case the model is pretrained with sensetice information
+
+the patterns can find sensetive data such defined by the company for example insurance policy number in an insurance company
+the goal is to detect any plain text, company defined sensetive data sent to the model
