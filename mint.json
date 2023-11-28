@@ -10,13 +10,13 @@
     "primary": "#ba9cff",
     "light": "#ba9cff",
     "dark": "#8646F4",
-    "background":{
+    "background": {
       "dark": "#030014"
     },
     "anchors": {
       "from": "#ba9cff",
       "to": "#ba9cff"
-      }
+    }
   },
   "topbarLinks": [
     {
@@ -43,7 +43,7 @@
   "tabs": [
     {
       "name": "API References",
-      "url": "api-playground"
+      "url": "api-reference"
     }
   ],
   "anchors": [
@@ -61,11 +61,36 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart"]
+      "pages": [
+        "introduction",
+        "quickstart"
+      ]
     },
     {
       "group": "Shields",
-      "pages": ["shields/input-shields", "shields/output-shields"]
+      "pages": [
+        "shields/introduction",
+        {
+          "group": "Input Shields",
+          "pages": [
+            "shields/input/prompt_injection_transformer",
+            "shields/input/model_denial_transformer",
+            "shields/input/captains",
+            "shields/input/semantic_vector_similarity",
+            "shields/input/regex",
+            "shields/input/prompt_safety"
+          ]
+        },
+        {
+          "group": "Output Shields",
+          "pages": [
+            "shields/output/canary_token_disclosure",
+            "shields/output/model_refusal",
+            "shields/output/pii_sensetive_information_disclosure",
+            "shields/output/regex"
+          ]
+        }
+      ]
     }
   ],
   "footerSocials": {
