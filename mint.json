@@ -1,10 +1,9 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
   "name": "Vibranium Dome",
   "logo": {
     "dark": "./logo/dark.svg",
     "light": "./logo/light.svg",
-    "href": "https://docs.vibraniumdome.com"
+    "href": "/"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -17,20 +16,35 @@
     "anchors": {
       "from": "#ba9cff",
       "to": "#ba9cff"
-    }
+      }
   },
   "topbarLinks": [
     {
-      "name": "Support",
+      "name": "Home",
+      "url": "https://vibraniumdome.com"
+    },
+    {
+      "name": "Feedback",
+      "url": "mailto:hi@vibraniumdome.com"
+    },
+    {
+      "name": "Blog",
+      "url": "mailto:hi@vibraniumdome.com"
+    },
+    {
+      "name": "Docs",
       "url": "mailto:hi@vibraniumdome.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://docs.vibraniumdome.com"
+    "type": "github",
+    "url": "https://github.com/genia-dev/VibraniumDome/"
   },
   "tabs": [
-   
+    {
+      "name": "API References",
+      "url": "api-playground"
+    }
   ],
   "anchors": [
     {

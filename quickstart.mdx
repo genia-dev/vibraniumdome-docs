@@ -24,9 +24,10 @@ The project has multiple components, the easiest way to start is by using [Docke
 
 ### Analyze your first LLM interaction
 
-<Warning>This code sample requires OpenAI API Key, you can generate one [here](https://platform.openai.com/api-keys)</Warning>
+<Note>This code sample requires OpenAI API Key, you can generate one [here](https://platform.openai.com/api-keys)</Note>
 
 #### Install the Vibranium Dome SDK
+<Note>This step should be done in the Agent code, can be skipped in the server installation</Note>
 
 ```
 pip3 install vibranium-dome-sdk openai
@@ -42,7 +43,7 @@ from vibranium_dome_sdk import VibraniumDome
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-VibraniumDome.init(app_name="openai_test_app")
+VibraniumDome.init(app_name="set_you_agent_name_here")
 
 def main():
     response = openai.ChatCompletion.create(
