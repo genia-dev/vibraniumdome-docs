@@ -37,7 +37,7 @@
     }
   ],
   "topbarCtaButton": {
-    "type": "github",
+    "name": "Github",
     "url": "https://github.com/genia-dev/VibraniumDome/"
   },
   "tabs": [
