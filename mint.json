@@ -38,7 +38,7 @@
   ],
   "topbarCtaButton": {
     "name": "Github",
-    "url": "https://github.com/genia-dev/VibraniumDome/"
+    "url": "https://github.com/genia-dev/vibraniumdome/"
   },
   "tabs": [
     {
@@ -103,6 +103,6 @@
   "footerSocials": {
     "twitter": "https://twitter.com",
     "linkedin": "https://linkedin.com",
-    "github": "https://github.com/genia-dev/VibraniumDome"
+    "github": "https://github.com/genia-dev/vibraniumdome"
   }
 }
