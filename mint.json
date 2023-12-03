@@ -69,8 +69,8 @@
     {
       "group": "Application",
       "pages": [
-        "/application/dashboard",
-        "/application/policies"
+        "application/dashboard",
+        "application/policies"
       ]
     },
     {
@@ -81,11 +81,13 @@
           "group": "Input Shields",
           "pages": [
             "shields/input/prompt_injection_transformer",
-            "shields/input/model_denial_transformer",
+            "shields/input/model_denial_of_service",
             "shields/input/captains",
             "shields/input/semantic_vector_similarity",
             "shields/input/regex",
-            "shields/input/prompt_safety"
+            "shields/input/prompt_safety",
+            "shields/input/secret_prompt_detection",
+            "shields/input/malicious_urls"
           ]
         },
         {
@@ -95,14 +97,12 @@
             "shields/output/model_refusal",
             "shields/output/pii_sensetive_information_disclosure",
             "shields/output/regex",
-            "shields/output/language_detection.mdx",
-            "shields/output/code_completion.mdx",
-            "shields/output/markdown_completion.mdx",
-            "shields/output/secret_completion_detection.mdx",
-            "shields/output/sql_completion_guardrail.mdx",
-            "shields/output/function_calling_guardrail.mdx",
-            "shields/input/secret_prompt_detection.mdx",
-            "shields/input/malicious_urls.mdx"
+            "shields/output/language_detection",
+            "shields/output/code_completion",
+            "shields/output/markdown_completion",
+            "shields/output/secret_completion_detection",
+            "shields/output/sql_completion_guardrail",
+            "shields/output/function_calling_guardrail"
           ]
         }
       ]
