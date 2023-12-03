@@ -94,7 +94,15 @@
             "shields/output/canary_token_disclosure",
             "shields/output/model_refusal",
             "shields/output/pii_sensetive_information_disclosure",
-            "shields/output/regex"
+            "shields/output/regex",
+            "shields/output/language_detection.mdx",
+            "shields/output/code_completion.mdx",
+            "shields/output/markdown_completion.mdx",
+            "shields/output/secret_completion_detection.mdx",
+            "shields/output/sql_completion_guardrail.mdx",
+            "shields/output/function_calling_guardrail.mdx",
+            "shields/input/secret_prompt_detection.mdx",
+            "shields/input/malicious_urls.mdx"
           ]
         }
       ]
