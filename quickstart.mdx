@@ -7,6 +7,28 @@ description: 'Start with Vibranium Dome '
 
 The project has multiple components, the easiest way to start is by using [Docker Compose](https://docs.docker.com/compose/).
 
+<Note>
+[OpenSearch](https://opensearch.org/docs/latest/quickstart/#starting-your-cluster) requires max virtual memory areas `vm.max_map_count` to be `262144`, and in some environments it's `65530`, so check first and apply workaround to make sure it's the correct value.   
+Run first:    
+`docker run -u root -it opensearchproject/opensearch:2.9.0 bash -c "cat /proc/sys/vm/max_map_count"`   
+if that command return `65530`, run that command to increase it temporarily:   
+`docker run --rm --privileged alpine sysctl -w vm.max_map_count=262144`   
+and run again the previos command to make sure the new value set to `262144`    
+`docker run -u root -it opensearchproject/opensearch:2.9.0 bash -c "cat /proc/sys/vm/max_map_count"`    
+</Note>
+
+<Note>
+OpenSearch on Linux machine need to change the owner of the filesystem volumes, so run:    
+`mkdir vibraniumdome-opensearch/vibraniumdome-opensearch-data1`    
+`mkdir vibraniumdome-opensearch/vibraniumdome-opensearch-data2`    
+`sudo chown -R 1000:1000 vibraniumdome-opensearch/vibraniumdome-opensearch-data1`    
+`sudo chown -R 1000:1000 vibraniumdome-opensearch/vibraniumdome-opensearch-data2`    
+</Note>
+
+<Note>
+Set `OPENAI_API_KEY` environment variable in [environment file](https://github.com/genia-dev/vibraniumdome/blob/main/vibraniumdome-shields/.env.example), you can generate one [here](https://platform.openai.com/api-keys)
+</Note>
+
 <Steps>
   <Step title="Clone the repository">
     ```git clone https://github.com/genia-dev/vibraniumdome```
@@ -22,12 +44,20 @@ The project has multiple components, the easiest way to start is by using [Docke
   </Step>
 </Steps>
 
+<Note>
+The previous command of `docker-compose up` use existing docker images in docker-hub, if you would like to modify & build the project from source locally, you can run the docker-compose in build mode by:    
+```
+cp vibraniumdome-app/.env.example .env    
+docker-compose -f docker-compose.build.yml up --build
+```
+</Note>
+
 ### Analyze your first LLM interaction
-
-<Note>This code sample requires OpenAI API Key, you can generate one [here](https://platform.openai.com/api-keys)</Note>
-
+<Note>
+Make sure to set `OPENAI_API_KEY` environment variable.
+</Note>
 #### Install the Vibranium Dome SDK
-<Note>This step should be done in the Agent code, can be skipped in the server installation</Note>
+<Note>This step should be done in the Agent code, can be skipped in the server installation.</Note>
 
 ```
 pip3 install vibraniumdome-sdk openai==0.28.1
