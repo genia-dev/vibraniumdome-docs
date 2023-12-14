@@ -44,13 +44,15 @@ Set `OPENAI_API_KEY` environment variable in [environment file](https://github.c
   </Step>
 </Steps>
 
-<Note>
+<Note>There are two authentication providers in the app: Google and Basic credentials. To make the Google login work, you need to register an [OAuth 2.0 application on Google Cloud Platform](https://support.google.com/cloud/answer/6158849?hl=en). The default username and password for the login are: username: `admin@admin.com` and password: `admin`. You can change it [here](https://github.com/genia-dev/vibraniumdome/blob/main/vibraniumdome-app/prisma/seed.ts).</Note>
+
+<Tip>
 The previous command of `docker-compose up` use existing docker images in docker-hub, if you would like to modify & build the project from source locally, you can run the docker-compose in build mode by:    
 ```
 cp vibraniumdome-app/.env.example .env    
 docker-compose -f docker-compose.build.yml up --build
 ```
-</Note>
+</Tip>
 
 ### Analyze your first LLM interaction
 <Tip>There are two ways to start scanning your LLM application: by code, or by using a Streamlit app that is included in the Docker Compose.</Tip>
@@ -60,6 +62,8 @@ After you run the `docker-compose up` of the whole system like in the above inst
 
 In the left pane of the streamlit app in the `Environment Variables` section you need to configure the OpenAI API Key.
 The Streamlit app, by default, uses http://localhost:3000 for the `Vibranium Dome Base URL (optional)`. You can change this to point to a different URL.
+
+Now you can chat in the app, and see the results in [Vibranium-App](http://localhost:3000/).
 
 #### *Analyze LLM Interactions by code*
 <Note>
