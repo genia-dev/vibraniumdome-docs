@@ -53,10 +53,19 @@ docker-compose -f docker-compose.build.yml up --build
 </Note>
 
 ### Analyze your first LLM interaction
+<Tip>There are two ways to start scanning your LLM application: by code, or by using a Streamlit app that is included in the Docker Compose.</Tip>
+
+#### *Analyze LLM Interactions by streamlit app*
+After you run the `docker-compose up` of the whole system like in the above instructions, navigate to [VibraniumDome-Streamlit-App](http://localhost:8501/).
+
+In the left pane of the streamlit app in the `Environment Variables` section you need to configure the OpenAI API Key.
+The Streamlit app, by default, uses http://localhost:3000 for the `Vibranium Dome Base URL (optional)`. You can change this to point to a different URL.
+
+#### *Analyze LLM Interactions by code*
 <Note>
 Make sure to set `OPENAI_API_KEY` environment variable.
 </Note>
-#### Install the Vibranium Dome SDK
+##### Install the Vibranium Dome SDK
 <Note>This step should be done in the Agent code, can be skipped in the server installation.</Note>
 
 ```
