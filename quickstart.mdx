@@ -5,7 +5,8 @@ description: 'Start with Vibranium Dome '
 
 ## Setup
 
-The project has multiple components, the easiest way to start is by using [Docker Compose](https://docs.docker.com/compose/).
+The project has multiple components, the easiest way to start is by using [Docker Compose](https://docs.docker.com/compose/) or [Helm Charts](https://helm.sh/).
+<Note>VibraniumDome supports both OpenAI API & Azure AI API.</Note>
 
 <Note>
 [OpenSearch](https://opensearch.org/docs/latest/quickstart/#starting-your-cluster) requires max virtual memory areas `vm.max_map_count` to be `262144`, and in some environments it's `65530`, so check first and apply workaround to make sure it's the correct value.   
@@ -36,8 +37,8 @@ Set `OPENAI_API_KEY` environment variable in [environment file](https://github.c
   <Step title="Change directory to vibraniumdome">
     ```cd vibraniumdome```
   </Step>
-  <Step title="Start the project with docker-compose">
-    ```docker-compose up```
+  <Step title="Start the project">
+    With docker-compose: ```docker-compose up``` ; With Helm: ```helm install test-release helm/```
   </Step>
   <Step title="Open The Application">
     Navigate to [Vibranium-App](http://localhost:3000/)
@@ -55,28 +56,31 @@ docker-compose -f docker-compose.build.yml up --build
 </Tip>
 
 ### Analyze your first LLM interaction
-<Tip>There are two ways to start scanning your LLM application: by code, or by using a Streamlit app that is included in the Docker Compose.</Tip>
+<Tip>There are two ways to start scanning your LLM application: by code, or by using a Streamlit app that is included in the Docker Compose & Helm Chart.</Tip>
 
 #### *Analyze LLM Interactions by streamlit app*
-After you run the `docker-compose up` of the whole system like in the above instructions, navigate to [VibraniumDome-Streamlit-App](http://localhost:8501/).
+After you run the the whole system like in the above instructions, navigate to [VibraniumDome-Streamlit-App](http://localhost:8501/).
 
 In the left pane of the streamlit app in the `Environment Variables` section you need to configure the OpenAI API Key.
-The Streamlit app, by default, uses http://localhost:3000 for the `Vibranium Dome Base URL (optional)`. You can change this to point to a different URL.
+The Streamlit app, by default, uses http://localhost:5001 for the `Vibranium Dome Base URL (optional)`. You can change this to point to a different URL.
 
 Now you can chat in the app, and see the results in [Vibranium-App](http://localhost:3000/).
 
 #### *Analyze LLM Interactions by code*
+<Note>Both the old OpenAI SDK version 0.28.1 and the new 1.* OpenAI SDK version are supported.</Note>
 <Note>
-Make sure to set `OPENAI_API_KEY` environment variable.
+Make sure to set `OPENAI_API_KEY` environment variable in both .env files [here](https://github.com/genia-dev/vibraniumdome/blob/main/vibraniumdome-shields/examples/.env.example) and [here](https://github.com/genia-dev/vibraniumdome/blob/main/vibraniumdome-shields/.env.example).
 </Note>
 ##### Install the Vibranium Dome SDK
 <Note>This step should be done in the Agent code, can be skipped in the server installation.</Note>
 
-```
-pip3 install vibraniumdome-sdk openai==0.28.1
-```
+#### Create demo application with the *OLD* OpenAI SDK in `main.py`
 
-#### Create demo application in `main.py`
+```
+python3 -m venv venv
+source venv/bin/activate
+pip3 install vibraniumdome-sdk==0.3.0 openai==0.28.1
+```
 
 ```python
 import os
@@ -107,6 +111,37 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
+#### Create demo application with the *NEW* OpenAI SDK in `main.py`
+
+```
+python3 -m venv venv
+source venv/bin/activate
+pip3 install vibraniumdome-sdk openai
+```
+
+<Note>In newer versions of VibraniumDome, it requires to set `VIBRANIUM_DOME_API_KEY`; If not provided, it used the default one defined in [VibraniumDome System](https://github.com/genia-dev/vibraniumdome)</Note>
+
+
+```python
+import os
+from openai import OpenAI
+
+from vibraniumdome_sdk import VibraniumDome
+
+VibraniumDome.init(app_name="set_you_agent_name_here")
+
+client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+completion = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[{"role": "user", "content": "Tell me a joke about opentelemetry"}],
+    user="user-123456",
+    extra_headers={"x-session-id": "abcd-1234-cdef"},
+)
+
+print(completion.choices[0].message.content)
+
 ```
 
 #### Run the demo application
